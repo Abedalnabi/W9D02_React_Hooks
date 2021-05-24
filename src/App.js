@@ -6,11 +6,23 @@ const App = () => {
     { userId: 1, id: 101, title: "Mohammad", body: "mohammadBody" },
     { userId: 2, id: 102, title: "alnabale", body: "mohammadBody2" },
   ]);
+
+  const [userId, setUserId] = useState(6);
+  const [id, setId] = useState(150);
+  const [title, setTitle] = useState("nab");
+  const [body, setBody] = useState("adsad");
+
   const array = post.map((ele, i) => {
     return (
       <div key={i}>
-        <p> {ele.title}</p>
-        <p>{ele.body}</p>
+        <p> Title : {ele.title}</p>
+        <p> Body: {ele.body}</p>
+
+        <input></input>
+        <input></input>
+        <input></input>
+        <input></input>
+        <button>click</button>
       </div>
     );
   });
