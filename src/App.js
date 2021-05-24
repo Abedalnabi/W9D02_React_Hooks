@@ -2,7 +2,11 @@ import React from "react";
 import "./App.css";
 
 const App = () => {
-  return <h1>MERAKddI Academy</h1>;
+  return (
+    <div>
+      <h1>Blog App</h1>
+    </div>
+  );
 };
 
 export default App;
