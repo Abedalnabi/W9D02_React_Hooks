@@ -33,9 +33,9 @@ const App = () => {
       <h1>Blog App</h1>
       {array}
       <input placeholder="userId" onChange={changeID}></input>
-      <input placeholder="id"></input>
-      <input placeholder="title"></input>
-      <input placeholder="body"></input>
+      <input placeholder="id" onChange={changeID}></input>
+      <input placeholder="title" onChange={changeID}></input>
+      <input placeholder="body" onChange={changeID}></input>
       <button>click</button>
     </div>
   );
