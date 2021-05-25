@@ -3,35 +3,40 @@ import "./App.css";
 
 const App = () => {
   const [post, setPost] = useState([
-    { userId: 1, id: 101, title: "Mohammad", body: "mohammadBody" },
-    { userId: 2, id: 102, title: "alnabale", body: "mohammadBody2" },
+    { userId: 1, id: 101, title: "JavaScript", body: "ReactHocks" },
+    { userId: 2, id: 102, title: "State Hocks", body: "Effect Hocks" },
   ]);
 
-  const [userId, setUserId] = useState(6);
-  const [id, setId] = useState(150);
-  const [title, setTitle] = useState("nab");
-  const [body, setBody] = useState("adsad");
+  const [userId, setUserId] = useState(0);
+  const [id, setId] = useState(101);
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
 
+  const changeID = (e) => {
+    setUserId(e.target.value);
+    setId(e.target.value);
+    setTitle(e.target.value);
+    setBody(e.target.value);
+  };
   const array = post.map((ele, i) => {
     return (
       <div key={i}>
-        <p> Title : {ele.title}</p>
-        <p> Body: {ele.body}</p>
-
-        <input></input>
-        <input></input>
-        <input></input>
-        <input></input>
-        <button>click</button>
+        <p>
+          {ele.title}, {ele.body}
+        </p>
       </div>
     );
   });
-  console.log(post[0]);
 
   return (
     <div>
       <h1>Blog App</h1>
       {array}
+      <input placeholder="userId" onChange={changeID}></input>
+      <input placeholder="id"></input>
+      <input placeholder="title"></input>
+      <input placeholder="body"></input>
+      <button>click</button>
     </div>
   );
 };
