@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import axios from "axios";
 
 const App = () => {
   const [post, setPost] = useState([
@@ -35,6 +36,11 @@ const App = () => {
     );
   });
 
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((rsl) => {
+      setPost(rsl.data);
+    });
+  }, []);
   return (
     <div>
       <h1>Blog App</h1>
