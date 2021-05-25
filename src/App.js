@@ -12,12 +12,19 @@ const App = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
-  const changeID = (e) => {
+  const changeUseID = (e) => {
     setUserId(e.target.value);
+  };
+  const changeID = (e) => {
     setId(e.target.value);
+  };
+  const changeTitle = (e) => {
     setTitle(e.target.value);
+  };
+  const ChangeBody = (e) => {
     setBody(e.target.value);
   };
+
   const array = post.map((ele, i) => {
     return (
       <div key={i}>
@@ -32,11 +39,17 @@ const App = () => {
     <div>
       <h1>Blog App</h1>
       {array}
-      <input placeholder="userId" onChange={changeID}></input>
+      <input placeholder="userId" onChange={changeUseID}></input>
       <input placeholder="id" onChange={changeID}></input>
-      <input placeholder="title" onChange={changeID}></input>
-      <input placeholder="body" onChange={changeID}></input>
-      <button>click</button>
+      <input placeholder="title" onChange={changeTitle}></input>
+      <input placeholder="body" onChange={ChangeBody}></input>
+      <button
+        onClick={() => {
+          setPost([...post, { userId, id, title, body }]);
+        }}
+      >
+        click
+      </button>
     </div>
   );
 };
